@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""Definition of blueprint paths
-"""
+'''
+Handles the starting of an api
+'''
 
 from api.v1.views import app_views
 from models import storage
@@ -27,6 +28,7 @@ def stats():
     reviews = storage.count(Review)
     states = storage.count(State)
     users = storage.count(User)
+    """Retrieves the number of each object by type."""
     return {
         "amenities": amenities,
         "cities": cities,
@@ -35,3 +37,4 @@ def stats():
         "states": states,
         "users": users,
     }
+
